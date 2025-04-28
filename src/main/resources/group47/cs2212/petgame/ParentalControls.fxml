@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="group47.cs2212.petgame.ParentalControlsController" style="-fx-background-color: linear-gradient(to bottom, #eef2f3, #8e9eab);">
+   <children>
+      <!-- Background Image -->
+      <ImageView fitHeight="1000.0" fitWidth="1477.0" layoutX="-100.0" layoutY="-100.0" pickOnBounds="true">
+         <image>
+            <Image url="@background_pictures/newgame_background.png" />
+         </image>
+      </ImageView>
+
+      <!-- Main Menu Button -->
+      <Button fx:id="menuButton" layoutX="20.0" layoutY="20.0" text="Main Menu" onAction="#switchtoMain"
+              style="-fx-font-size: 16px; -fx-background-color: #6c63ff; -fx-text-fill: white; -fx-padding: 10px 20px; -fx-border-radius: 5px; -fx-background-radius: 5px;" />
+
+      <!-- Title -->
+      <Label text="Parental Controls" layoutX="620.0" layoutY="40.0"
+             style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #333333;" />
+
+      <!-- Set Password Pane -->
+      <Pane fx:id="setPasswordPane" layoutX="550" layoutY="150" prefWidth="400" prefHeight="250" style="-fx-background-color: white; -fx-border-color: #6c63ff; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-effect: dropshadow(gaussian, #6c63ff, 10, 0.5, 0, 2);">
+         <children>
+            <Label text="Set New Password" layoutX="130" layoutY="20" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <TextField fx:id="newPasswordField" layoutX="50" layoutY="60" prefWidth="300" promptText="Enter new password"
+                       style="-fx-font-size: 14px; -fx-padding: 5px;" />
+            <TextField fx:id="confirmPasswordField" layoutX="50" layoutY="100" prefWidth="300" promptText="Confirm password"
+                       style="-fx-font-size: 14px; -fx-padding: 5px;" />
+            <Button text="Set Password" layoutX="150" layoutY="150" onAction="#setPassword"
+                    style="-fx-font-size: 16px; -fx-background-color: #6c63ff; -fx-text-fill: white; -fx-padding: 10px 20px; -fx-border-radius: 5px; -fx-background-radius: 5px;" />
+            <Label fx:id="setPasswordMessageLabel" layoutX="50" layoutY="200" style="-fx-text-fill: red; -fx-font-size: 14px;" />
+         </children>
+      </Pane>
+
+      <!-- Login Pane -->
+      <Pane fx:id="loginPane" layoutX="550" layoutY="150" prefWidth="400" prefHeight="200" visible="false" style="-fx-background-color: white; -fx-border-color: #6c63ff; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-effect: dropshadow(gaussian, #6c63ff, 10, 0.5, 0, 2);">
+         <children>
+            <Label text="Enter Password" layoutX="130" layoutY="20" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <TextField fx:id="loginPasswordField" layoutX="50" layoutY="60" prefWidth="300" promptText="Enter password"
+                       style="-fx-font-size: 14px; -fx-padding: 5px;" />
+            <Button text="Login" layoutX="150" layoutY="120" onAction="#authenticate"
+                    style="-fx-font-size: 16px; -fx-background-color: #6c63ff; -fx-text-fill: white; -fx-padding: 10px 20px; -fx-border-radius: 5px; -fx-background-radius: 5px;" />
+            <Label fx:id="loginMessageLabel" layoutX="50" layoutY="160" style="-fx-text-fill: red; -fx-font-size: 14px;" />
+         </children>
+      </Pane>
+
+      <!-- Main Controls Pane -->
+      <Pane fx:id="mainControlsPane" layoutX="500" layoutY="150" prefWidth="500" prefHeight="300" visible="false" style="-fx-background-color: white; -fx-border-color: #6c63ff; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-effect: dropshadow(gaussian, #6c63ff, 10, 0.5, 0, 2);">
+         <children>
+            <Label text="Daily Time Limit (minutes)" layoutX="30" layoutY="20" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            <TextField fx:id="timeLimitField" layoutX="250" layoutY="20" prefWidth="150" style="-fx-font-size: 14px; -fx-padding: 5px;" />
+            <Button text="Set Limit" layoutX="420" layoutY="20" onAction="#setDailyTimeLimit"
+                    style="-fx-font-size: 14px; -fx-background-color: #6c63ff; -fx-text-fill: white; -fx-padding: 5px 10px; -fx-border-radius: 5px; -fx-background-radius: 5px;" />
+
+            <Label text="Block Hours (HH:mm-HH:mm)" layoutX="30" layoutY="80" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            <TextField fx:id="blockHoursField" layoutX="250" layoutY="80" prefWidth="150" style="-fx-font-size: 14px; -fx-padding: 5px;" />
+            <Button text="Set Hours" layoutX="420" layoutY="80" onAction="#setBlockHours"
+                    style="-fx-font-size: 14px; -fx-background-color: #6c63ff; -fx-text-fill: white; -fx-padding: 5px 10px; -fx-border-radius: 5px; -fx-background-radius: 5px;" />
+
+            <Button text="View Stats" layoutX="200" layoutY="200" onAction="#viewPlaytimeStats"
+                    style="-fx-font-size: 16px; -fx-background-color: #6c63ff; -fx-text-fill: white; -fx-padding: 10px 20px; -fx-border-radius: 5px; -fx-background-radius: 5px;" />
+            <Label fx:id="playtimeStats" layoutX="30" layoutY="260" style="-fx-font-size: 16px; -fx-text-fill: #333333;" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
+

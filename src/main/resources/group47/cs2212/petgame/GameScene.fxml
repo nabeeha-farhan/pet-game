@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.event.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="group47.cs2212.petgame.MiniGameController" styleClass="root" stylesheets="@style.css">
+    <!-- Background Image -->
+    <ImageView fitHeight="800.0" fitWidth="1200.0" layoutX="-100.0" layoutY="-50.0" pickOnBounds="true">
+        <image>
+            <Image url="@background_pictures/petBackground3.png" />
+        </image>
+    </ImageView>
+
+    <!-- Mini Games Button -->
+    <VBox layoutX="50" layoutY="450" spacing="20" fx:id="miniGamesContainer" alignment="CENTER" styleClass="menu-container">
+        <Button text="Mini Games" onAction="#toggleMiniGames" styleClass="menu-button" prefWidth="200" />
+        <VBox fx:id="gamesMenu" spacing="15" visible="false" alignment="CENTER">
+            <Button text="Coin Flip" onAction="#openCoinFlipGame" styleClass="game-button" prefWidth="200" />
+            <Button text="Tic Tac Toe" onAction="#openTicTacToeGame" styleClass="game-button" prefWidth="200" />
+        </VBox>
+        <!-- Exit Button for Mini Games -->
+        <Button text="Exit" onAction="#exitGame" styleClass="menu-button" prefWidth="200" />
+    </VBox>
+
+    <!-- Coin Flip Section -->
+    <VBox fx:id="coinFlipContainer" visible="false" alignment="CENTER" styleClass="game-container" spacing="15"
+          AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        <Label text="Coin Flip Game" style="-fx-font-size: 24px; -fx-text-fill: #fff;" />
+
+        <!-- Add the ImageView for the coin -->
+        <ImageView fx:id="coinImage" fitWidth="100" fitHeight="100" style="-fx-border-radius: 10px;" />
+
+        <Button text="Flip Coin" onAction="#flipCoin" fx:id="flipCoinButton" styleClass="game-button" prefWidth="200" />
+        <Label fx:id="coinFlipResult" text="Result will appear here" style="-fx-font-size: 18px; -fx-text-fill: #fff;" />
+
+        <!-- Exit Button for Coin Flip -->
+        <Button text="Exit" onAction="#exitCoinFlip" styleClass="game-button" prefWidth="200" />
+    </VBox>
+
+    <!-- Tic Tac Toe Section -->
+    <VBox fx:id="ticTacToeContainer" visible="false" alignment="CENTER" styleClass="game-container" spacing="20"
+          AnchorPane.leftAnchor="0" AnchorPane.topAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        <Label text="Tic Tac Toe" style="-fx-font-size: 24px; -fx-text-fill: #fff;" />
+        <GridPane hgap="10" vgap="10" fx:id="ticTacToeGrid" alignment="CENTER" style="-fx-padding: 10px;">
+            <!-- Tic Tac Toe Grid Buttons -->
+            <Button fx:id="cell00" onAction="#handleTicTacToeMove" prefWidth="100" prefHeight="100" />
+            <Button fx:id="cell01" onAction="#handleTicTacToeMove" prefWidth="100" prefHeight="100" />
+            <Button fx:id="cell02" onAction="#handleTicTacToeMove" prefWidth="100" prefHeight="100" />
+            <Button fx:id="cell10" onAction="#handleTicTacToeMove" prefWidth="100" prefHeight="100" />
+            <Button fx:id="cell11" onAction="#handleTicTacToeMove" prefWidth="100" prefHeight="100" />
+            <Button fx:id="cell12" onAction="#handleTicTacToeMove" prefWidth="100" prefHeight="100" />
+            <Button fx:id="cell20" onAction="#handleTicTacToeMove" prefWidth="100" prefHeight="100" />
+            <Button fx:id="cell21" onAction="#handleTicTacToeMove" prefWidth="100" prefHeight="100" />
+            <Button fx:id="cell22" onAction="#handleTicTacToeMove" prefWidth="100" prefHeight="100" />
+        </GridPane>
+        <Label fx:id="ticTacToeStatus" text="Player X's turn" style="-fx-font-size: 18px; -fx-text-fill: #fff;" />
+        <Button text="Reset Game" onAction="#resetTicTacToe" styleClass="game-button" prefWidth="200" />
+        <Button text="Exit" onAction="#exitTicTacToe" styleClass="game-button" prefWidth="200" />
+    </VBox>
+</AnchorPane>

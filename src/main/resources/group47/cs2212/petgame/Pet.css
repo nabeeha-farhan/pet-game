@@ -1,0 +1,49 @@
+.label-border {
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-border-radius: 5;
+}
+
+.label-background {
+    -fx-background-color: white; /* Use any valid CSS color */
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.button_styling {
+    -fx-background-color: green;
+    -fx-text-fill: white;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+}
+
+.button_styling:hover {
+    -fx-background-color: lightgreen; /* Change to lighter green on hover */
+    -fx-text-fill: black; /* Optional: Change text color on hover */
+    -fx-border-color: darkgreen; /* Optional: Change border color on hover */
+}
+
+.button_exit {
+    -fx-background-color: red;
+    -fx-text-fill: white;
+    -fx-border-color: black;
+    -fx-border-width: 2;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+}
+
+.button_exit:hover {
+    -fx-background-color: #bf2c2c; /* Change to lighter green on hover */
+    -fx-text-fill: black; /* Optional: Change text color on hover */
+    -fx-border-color: black; /* Optional: Change border color on hover */
+}
+
+#tutorialText {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-fill: linear-gradient(from 0% 0% to 100% 100%, red, orange, yellow, green, blue, indigo, violet);
+}

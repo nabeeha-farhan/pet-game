@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.Cursor?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="group47.cs2212.petgame.TutorialController" stylesheets="@Pet.css">
+    <children>
+        <!-- Background -->
+        <ImageView fitHeight="1000.0" fitWidth="1477.0" layoutX="-100.0" layoutY="-100.0" pickOnBounds="true">
+            <image>
+                <Image url="@background_pictures/newgame_background.png" />
+            </image>
+        </ImageView>
+
+        <!-- Pet Image -->
+        <ImageView fx:id="petView" fitHeight="382.0" fitWidth="507.0" layoutX="405.0" layoutY="168.0" pickOnBounds="true">
+            <cursor>
+                <Cursor fx:constant="DEFAULT" />
+            </cursor>
+            <image>
+                <Image url="@pet_pictures/pet1_angry.png" />
+            </image>
+        </ImageView>
+
+        <!-- Tutorial Text and Buttons -->
+        <VBox alignment="CENTER" spacing="20" layoutX="100" layoutY="50">
+            <Label fx:id="tutorialText" wrapText="true" text="Welcome to the tutorial!" style="-fx-font-size: 50px; -fx-font-weight: bold; -fx-text-fill: linear-gradient(to bottom, red, orange, yellow, green, blue);" />
+
+            <!-- Dynamic Selection Menu -->
+            <VBox fx:id="selectionMenu" spacing="10" visible="false" />
+
+            <!-- Navigation Buttons -->
+            <HBox spacing="10">
+                <Button fx:id="backStepButton" text="Back" onAction="#backStep" disable="true"/>
+                <Button fx:id="nextStepButton" text="Next" onAction="#nextStep"/>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>
+

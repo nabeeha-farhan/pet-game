@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.cs2212.math","l":"Circle"},{"p":"com.cs2212.math","l":"Main"},{"p":"com.cs2212.math","l":"Math"},{"p":"com.cs2212.math","l":"Rectangle"},{"p":"com.cs2212.math","l":"Square"}];updateSearchResults();

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.6" fx:controller="group47.cs2212.petgame.EventController">
+
+    <!-- Tabs for Event Categories -->
+    <TabPane layoutX="20.0" layoutY="20.0" prefHeight="300.0" prefWidth="560.0">
+        <tabs>
+            <Tab text="Login Gifts">
+                <AnchorPane>
+                    <children>
+                        <CheckBox layoutX="20.0" layoutY="20.0" text="Daily Login" />
+                        <CheckBox layoutX="20.0" layoutY="50.0" text="Week 1 &amp; 2" />
+                        <CheckBox layoutX="20.0" layoutY="80.0" text="Monthly" />
+                    </children>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Feed">
+                <AnchorPane>
+                    <children>
+                        <CheckBox layoutX="20.0" layoutY="20.0" text="Eat for first time" />
+                        <CheckBox layoutX="20.0" layoutY="50.0" text="Eat 50 times" />
+                        <CheckBox layoutX="20.0" layoutY="80.0" text="Eat 100 times" />
+                    </children>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Clean">
+                <AnchorPane>
+                    <children>
+                        <CheckBox layoutX="20.0" layoutY="20.0" text="Clean for first time" />
+                        <CheckBox layoutX="20.0" layoutY="50.0" text="Clean 10 times" />
+                        <CheckBox layoutX="20.0" layoutY="80.0" text="Clean 50 times" />
+                    </children>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Heal">
+                <AnchorPane>
+                    <children>
+                        <CheckBox layoutX="20.0" layoutY="20.0" text="Heal for first time" />
+                        <CheckBox layoutX="20.0" layoutY="50.0" text="Heal 10 times" />
+                        <CheckBox layoutX="20.0" layoutY="80.0" text="Heal 50 times" />
+                    </children>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Energize">
+                <AnchorPane>
+                    <children>
+                        <CheckBox layoutX="20.0" layoutY="20.0" text="Energize for first time" />
+                        <CheckBox layoutX="20.0" layoutY="50.0" text="Energize for 10 times" />
+                        <CheckBox layoutX="20.0" layoutY="80.0" text="Energize 50 times" />
+                    </children>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Birthday">
+                <AnchorPane>
+                    <children>
+                        <CheckBox layoutX="20.0" layoutY="20.0" text="1 Week Birthday" />
+                        <CheckBox layoutX="20.0" layoutY="50.0" text="2 Weeks Birthday" />
+                        <CheckBox layoutX="20.0" layoutY="80.0" text="3 Weeks Birthday" />
+                    </children>
+                </AnchorPane>
+            </Tab>
+        </tabs>
+    </TabPane>
+
+    <!-- Event Details -->
+    <Label fx:id="eventTitleLabel" layoutX="20.0" layoutY="340.0" text="Event Title" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+    <Label fx:id="eventDescriptionLabel" layoutX="20.0" layoutY="370.0" text="Event Description" wrapText="true" style="-fx-font-size: 14px;" prefWidth="400.0" />
+
+    <!-- Event Progress -->
+    <ProgressBar fx:id="eventProgressBar" layoutX="150.0" layoutY="400.0" prefWidth="200.0" progress="0.0" />
+
+    <!-- Event Image -->
+    <ImageView fx:id="eventImageView" layoutX="370.0" layoutY="400.0" fitHeight="100.0" fitWidth="100.0" />
+
+    <!-- Action Buttons -->
+    <Button fx:id="completeEventButton" layoutX="20.0" layoutY="520.0" text="Complete Event" onAction="#handleCompleteEvent" />
+    <Button fx:id="dismissEventButton" layoutX="150.0" layoutY="520.0" text="Dismiss Event" onAction="#handleDismissEvent" />
+    <Button fx:id="saveButton" layoutX="280.0" layoutY="520.0" text="Save Event" onAction="#handleSave" />
+</AnchorPane>
